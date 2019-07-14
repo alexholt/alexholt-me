@@ -5,7 +5,8 @@
   "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/"
+    "deploy": "rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
+    "ssh": "ssh alexhol3@alexholt.me"
   },
   "repository": {
     "type": "git",

@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
-    "ssh": "ssh alexhol3@alexholt.me"
+    "ssh": "ssh alexhol3@alexholt.me",
+    "start": "wp server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexholt/alexholt-me.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Alex Holt <me@alexholt.me>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexholt/alexholt-me/issues"
   },

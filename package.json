@@ -7,7 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "webpack --env.production && rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
     "ssh": "ssh alexhol3@alexholt.me",
-    "start": "webpack -w & wp server"
+    "start": "webpack -w & wp server",
+    "search-replace": "wp search-replace https://alexholt.me http://localhost:8080",
+    "production-db-dump": "npm run ssh \"wp --path=public_html db export dump.sql\"",
+    "import-production-db":
+      "npm run production-db-dump; scp alexhol3@alexholt.me:dump.sql .; wp db import dump.sql; npm run search-replace"
   },
   "repository": {
     "type": "git",

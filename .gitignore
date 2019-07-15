@@ -1,5 +1,6 @@
 /index.php
 /license.txt
+/node_modules
 /readme.html
 /wp-activate.php
 /wp-admin
@@ -7,8 +8,10 @@
 /wp-comments-post.php
 /wp-config-sample.php
 /wp-config.php
-/wp-content/themes/*
+/wp-content/debug.log
+/wp-content/index.php
 /wp-content/plugins/*
+/wp-content/themes/*
 /wp-cron.php
 /wp-includes
 /wp-links-opml.php
@@ -19,6 +22,7 @@
 /wp-signup.php
 /wp-trackback.php
 /xmlrpc.php
-/wp-content/index.php
 
 !/wp-content/themes/alex-theme
+
+/wp-content/themes/alex-theme/bundle.js

@@ -5,9 +5,9 @@
   "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
+    "deploy": "webpack --env.production && rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
     "ssh": "ssh alexhol3@alexholt.me",
-    "start": "wp server"
+    "start": "webpack -w & wp server"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/alexholt/alexholt-me/issues"
   },
-  "homepage": "https://github.com/alexholt/alexholt-me#readme"
+  "homepage": "https://github.com/alexholt/alexholt-me#readme",
+  "dependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
+  }
 }

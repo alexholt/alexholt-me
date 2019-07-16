@@ -56,6 +56,11 @@ add_action('admin_menu', function () {
   remove_menu_page('edit-comments.php');
 });
 
+add_filter('redirect_canonical', function ($redirect) {
+  if (get_query_var('post_type') == 'journal') return false;
+  return $redirect;
+});
+
 function send_to_404() {
   nocache_headers();
   status_header(404);

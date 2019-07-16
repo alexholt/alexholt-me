@@ -11,7 +11,7 @@
   <body>
     <div class="shield">
       <div class="shield--image">
-      <?php readfile('./assets/shield.svg') ?>
+      <?php readfile(get_template_directory() . '/assets/shield.svg') ?>
     </div>
     <div class="shield--text">alexholt.me</div>
     </div>

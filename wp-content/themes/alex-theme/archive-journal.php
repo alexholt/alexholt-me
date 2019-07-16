@@ -7,60 +7,6 @@ if (!is_user_logged_in()) {
 get_header();
 ?>
 
-<h1>Journal</h1>
-<style>
-
-  html, body {
-    height: 100%;
-  }
-
-  h4 {
-    padding: 0;
-    margin: 8px;
-  }
-
-  ul {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .cal {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 30px 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      ". . . . . . ."
-      ". . . . . . ."
-      ". . . . . . ."
-      ". . . . . . ."
-      ". . . . . . ."
-      ". . . . . . ."
-      ". . . . . . .";
-  }
-
-  .cal > .cal__entry {
-    position: relative;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    padding-left: 0.6em;
-    font-size: 15px;
-    overflow: hidden;
-  }
-
-  .cal > .cal__entry:nth-of-type(7n + 1) {
-    border-left: 2px solid black;
-  }
-
-  .cal__entry--empty {
-   background-color: grey; 
-  }
-  
-  .cal__entry--bottom {
-    border-bottom: 2px solid black;
-  }
-
-</style>
-
 <?php
 global $wp_query;
 $year = $wp_query->query_vars['year'] ? $wp_query->query_vars['year'] : date('Y');
@@ -100,34 +46,40 @@ $month_name = $date_obj->format('F');
 $starting_day = $date_obj->format('w');
 ?>
 
-<h2><?php echo $month_name . ' ' . $year ?></h2>
-<section class="cal">
-  <?php
-  for ($i = 0; $i < 7; $i++) {
-    echo '<div class="cal__entry"><h4>' . jddayofweek($i, 2) . '</h4></div>';
-  }
+<main>
 
-  for ($i = 1; $i <= $days_in_month + (int)$starting_day - 1; $i++) {
-    $offset = ($i - (int)$starting_day + 1);
-    
-    if ($i < (int)$starting_day) {
-      echo '<div class="cal__entry cal__entry--empty"></div>';
-
-    } elseif (isset($entries[$offset])) {
-      echo '<div class="cal__entry">' . $entries[$offset] . '</div>';
-
-    } else {
-      echo '<div class="cal__entry"><h4>' . (string)$offset . '</h4></div>';
-    }
-  }
+  <h1>Journal</h1>
   
-  $max_days = 42;
+  <h2><?php echo $month_name . ' ' . $year ?></h2>
+  
+  <section class="cal">
+    <?php
+    for ($i = 0; $i < 7; $i++) {
+      echo '<div class="cal__entry"><h4>' . jddayofweek($i, 2) . '</h4></div>';
+    }
 
-  for ($i = $days_in_month + (int)$starting_day + 1; $i <= $max_days + 1; $i++) {
-    echo '<div class="cal__entry cal__entry--empty"></div>';
-  }
-  ?>
-</section>
+    for ($i = 1; $i <= $days_in_month + (int)$starting_day - 1; $i++) {
+      $offset = ($i - (int)$starting_day + 1);
 
+      if ($i < (int)$starting_day) {
+        echo '<div class="cal__entry cal__entry--empty"></div>';
+
+      } elseif (isset($entries[$offset])) {
+        echo '<div class="cal__entry">' . $entries[$offset] . '</div>';
+
+      } else {
+        echo '<div class="cal__entry"><h4>' . (string)$offset . '</h4></div>';
+      }
+    }
+
+    $max_days = 42;
+
+    for ($i = $days_in_month + (int)$starting_day + 1; $i <= $max_days + 1; $i++) {
+      echo '<div class="cal__entry cal__entry--empty"></div>';
+    }
+    ?>
+  </section>
+
+</main>
 <?php
 get_footer();

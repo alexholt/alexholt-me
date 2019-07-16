@@ -9,4 +9,9 @@
   </head>
 
   <body>
-    <nav>alexholt.me</nav>
+    <div class="shield">
+      <div class="shield--image">
+      <?php readfile('./assets/shield.svg') ?>
+    </div>
+    <div class="shield--text">alexholt.me</div>
+    </div>

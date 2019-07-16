@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 407 626" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,59.1860205 L203.273839,0 L406.547678,59.1860205 L406.547678,482.899384 C347.885396,578.291314 280.12745,625.987278 203.273839,625.987278 C126.420228,625.987278 58.662282,578.291314 0,482.899384 L0,59.1860205 Z" id="path-1"></path>
+        <path d="M0,56.0659907 L186.292732,0 L372.585464,56.0659907 L372.585464,457.443027 C318.823717,547.806308 256.72614,592.987949 186.292732,592.987949 C115.859325,592.987949 53.7617474,547.806308 0,457.443027 L0,56.0659907 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Shield" transform="translate(-157.000000, -50.000000)">
+            <g id="Group-2" transform="translate(157.000000, 49.973190)">
+                <g id="Group">
+                    <g id="Rectangle-2" transform="translate(0.000000, 0.026810)">
+                        <g id="Rectangle">
+                            <g>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+                                <rect fill="#000000" mask="url(#mask-2)" x="202.832713" y="0.0608016061" width="254.51831" height="647.068064" rx="2"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-Copy" transform="translate(17.000000, 18.026810)">
+                    <g id="Rectangle-2">
+                        <g id="Rectangle">
+                            <g>
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <use id="Mask" fill="#87FF00" xlink:href="#path-3"></use>
+                                <rect fill="#D8D8D8" mask="url(#mask-4)" x="185.888457" y="0.0575964096" width="233.256338" height="612.957447" rx="2"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <path d="M203.5,195.02681 C245.25,195.02681 287,341.066157 287,362.02681 C287,376.000578 259.166667,362.369402 203.5,321.133282 C147.833333,358.995815 120,372.626991 120,362.02681 C120,346.126537 161.75,195.02681 203.5,195.02681 Z" id="Triangle" fill="#000000"></path>
+            </g>
+        </g>
+    </g>
+</svg>

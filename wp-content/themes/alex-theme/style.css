@@ -21,7 +21,7 @@
   font-weight: 800;
 }
 
-main {
+.journal-main {
   margin: 20px;
 }
 
@@ -29,7 +29,7 @@ html, body {
   height: 100%;
 }
 
-h4 {
+h4.journal-heading {
   padding: 0;
   margin: 8px;
 }

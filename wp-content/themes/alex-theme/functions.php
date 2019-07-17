@@ -1,21 +1,7 @@
 <?php
 
-add_action('wp_enqueue_scripts', function () {
-  wp_enqueue_script(
-    'alex-theme-bundle',
-    get_theme_file_uri('/bundle.js'),
-    [],
-    filemtime(get_theme_file_path('/bundle.js')),
-    true
-  );
-
-  wp_enqueue_style(
-    'alex-theme-style',
-    get_theme_file_uri('/style.css'),
-    [],
-    filemtime(get_theme_file_path('/style.css'))
-  );
-});
+include('inc/enqueue.php');
+include('inc/template-utility.php');
 
 add_action('init', function () {
   register_post_type( 'journal', [

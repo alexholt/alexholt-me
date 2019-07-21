@@ -8,4 +8,10 @@ phases:
       - npm install
   build:
     commands:
-      - npm run deploy
+      - npm run build
+  save-key:
+    commands:
+      - npm run save-key
+  deploy:
+    commands:
+      - npm run rsync

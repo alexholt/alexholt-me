@@ -12,6 +12,4 @@ phases:
   post_build:
     commands:
       - npm run save-key
-  deploy:
-    commands:
       - npm run rsync

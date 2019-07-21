@@ -5,7 +5,11 @@
   "main": "js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "webpack --env.production && rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
+    "rsync": "rsync -rv --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
+    "deploy": "npm run build; npm run rsync",
+    "save-key": "ssh-add id_rsa",
+    "build": "webpack --env.production",
+    "get-key": "aws ssm get-parameters --names alexholt-me-deploy-ssh-key --with-decryption > id_rsa",
     "ssh": "ssh alexhol3@alexholt.me",
     "start": "webpack -w & wp server",
     "search-replace": "wp search-replace https://alexholt.me http://localhost:8080",

@@ -30,7 +30,7 @@ module.exports = (env = {}) => {
     entry: path.resolve(__dirname, 'js/index.js'),
 
     output: {
-      path: path.resolve(__dirname, 'wp-content/themes/alex-theme/build'),
+      path: path.resolve(__dirname, 'wp-content/themes/alex-theme'),
       filename: 'bundle.js'
     },
 

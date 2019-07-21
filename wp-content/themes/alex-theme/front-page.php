@@ -1,16 +1,15 @@
-<?php get_header() ?>
+<?php
+get_header();
+the_post();
+?>
 
 <main>
 
-  <h1>Musings</h1>
+  <h1><?php the_title(); ?></h1>
+  <h2>Musings about Wordpress, JavaScript, and PHP</h2>
 
   <aside>
-    <h3>RTFM</h3>
-    <ul>
-
-      <li><?php echo_link('MariaDB', 'https://mariadb.com/kb/en/library/documentation/') ?></li>
-      <li><a rel="noopener" href="https://webpack.js.org/">Webpack</a></li>
-    </ul>
+    <?php the_content(); ?>
   </aside>
 
 </main>

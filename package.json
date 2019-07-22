@@ -9,7 +9,7 @@
     "deploy": "npm run build; npm run rsync",
     "auto-deploy": "rsync -rv -e \"ssh -i ./id_rsa\" --delete wp-content/themes/alex-theme alexhol3@alexholt.me:~/public_html/wp-content/themes/",
     "build": "webpack --env.production",
-    "get-key": "aws ssm get-parameters --names alexholt-me-deploy-ssh-key --with-decryption --query 'Parameters[0].Value' --output text' > id_rsa",
+    "get-key": "aws ssm get-parameters --names alexholt-me-deploy-ssh-key --with-decryption --query 'Parameters[0].Value' --output text > id_rsa",
     "ssh": "ssh alexhol3@alexholt.me",
     "start": "webpack -w & wp server",
     "search-replace": "wp search-replace https://alexholt.me http://localhost:8080",

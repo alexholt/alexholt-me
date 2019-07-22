@@ -13,3 +13,4 @@ phases:
     commands:
       - npm run get-key
       - npm run auto-deploy
+      - npm run delete-key

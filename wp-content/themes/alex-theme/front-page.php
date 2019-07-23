@@ -9,7 +9,11 @@ the_post();
   <h2>Musings about Wordpress, JavaScript, and PHP</h2>
 
   <aside>
-    <?php the_content(); ?>
+    <?php if ( is_active_sidebar( 'rtfm' ) ) : ?>
+      <aside id="secondary" class="sidebar widget-area" role="complementary">
+        <?php dynamic_sidebar( 'rtfm' ); ?>
+      </aside><!-- .sidebar .widget-area -->
+    <?php endif; ?>:
   </aside>
 
 </main>

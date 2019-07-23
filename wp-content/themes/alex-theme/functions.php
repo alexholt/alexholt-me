@@ -36,6 +36,18 @@ add_action('init', function () {
     'capability_type'     => 'post',
     'show_in_rest'        => true,
   ]);
+
+  register_sidebar(
+    array(
+      'name'          => 'RTFM',
+      'id'            => 'rtfm',
+      'description'   => 'Add widgets here to appear in your sidebar.',
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
 });
 
 add_action('admin_menu', function () {

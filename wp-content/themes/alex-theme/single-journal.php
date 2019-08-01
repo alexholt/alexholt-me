@@ -7,6 +7,8 @@ if (get_the_author_meta('ID') != get_current_user_id()) {
 }
 
 get_header();
+
+$month_url = get_the_date('Y') . '/' . get_the_date('m');
 ?>
 
 <h1>Single Journal</h1>
@@ -15,7 +17,7 @@ get_header();
 <section><?php the_content() ?></section>
 
 <span><?php the_author_meta('nickname') ?> — </span>
-<span><?php the_date() ?></span>
+<a href="/journal/<?php echo $month_url; ?>"><?php the_date() ?></a>
 
 <?php
 

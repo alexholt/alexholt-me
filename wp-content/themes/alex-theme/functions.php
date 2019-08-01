@@ -1,9 +1,8 @@
 <?php
 
 include('inc/enqueue.php');
-include('inc/template-utility.php');
 
-add_action('init', function () {
+add_action( 'init', function () {
   register_post_type( 'journal', [
 
     'labels'              => [
@@ -31,10 +30,10 @@ add_action('init', function () {
     'has_archive'         => true,
     'query_var'           => true,
     'can_export'          => true,
-    'rewrite'             => ['slug' => 'journal'],
     'menu_icon'           => 'dashicons-welcome-write-blog',
     'capability_type'     => 'post',
     'show_in_rest'        => true,
+    'with_front'          => false,
   ]);
 
   register_sidebar(
@@ -48,15 +47,11 @@ add_action('init', function () {
       'after_title'   => '</h2>',
     )
   );
-});
 
-add_action('admin_menu', function () {
-  remove_menu_page('edit-comments.php');
-});
+  add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+  });
 
-add_filter('redirect_canonical', function ($redirect) {
-  if (get_query_var('post_type') == 'journal') return false;
-  return $redirect;
 });
 
 function send_to_404() {

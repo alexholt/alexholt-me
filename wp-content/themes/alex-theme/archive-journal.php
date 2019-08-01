@@ -1,6 +1,6 @@
 <?php
 
-if (!is_user_logged_in()) {
+if ( !is_user_logged_in() ) {
   send_to_404();
 }
 
@@ -9,8 +9,14 @@ get_header();
 
 <?php
 global $wp_query;
-$year = $wp_query->query_vars['year'] ? $wp_query->query_vars['year'] : date('Y');
-$month = $wp_query->query_vars['monthnum'] ? $wp_query->query_vars['monthnum'] : date('m');
+
+if ($wp_query->query_vars['day']) {
+  include(get_query_template('single-journal'));
+  die;
+}
+
+$year = $wp_query->query_vars['year'] ?: date('Y');
+$month = $wp_query->query_vars['monthnum'] ?: date('m');
 $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
 $query = new WP_Query([
@@ -49,9 +55,9 @@ $starting_day = $date_obj->format('w');
 <main>
 
   <h1>Journal</h1>
-  
+
   <h2><?php echo $month_name . ' ' . $year ?></h2>
-  
+
   <section class="cal">
     <?php
     for ($i = 0; $i < 7; $i++) {
@@ -68,7 +74,9 @@ $starting_day = $date_obj->format('w');
         echo '<div class="cal__entry">' . $entries[$offset] . '</div>';
 
       } else {
-        echo '<div class="cal__entry"><h4>' . (string)$offset . '</h4></div>';
+        echo '<div class="cal__entry"><h4><a href="/wp-admin/post-new.php?post_type=journal">' .
+             (string)$offset .
+             '</a></h4></div>';
       }
     }
 

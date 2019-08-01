@@ -17,7 +17,7 @@
     "copy-db-to-production": "scp dump.sql alexhol3@alexholt.me:~",
     "import-db": "wp db import dump.sql",
     "import-db-remote": "npm run ssh \"wp --path=public_html db import dump.sql\"",
-    "import-production-db": "npm run production-db-dump; npm run copy-db; wp db import dump.sql; npm run import-db; npm run search-replace",
+    "import-production-db": "npm run production-db-dump; npm run copy-db; npm run import-db; npm run search-replace",
     "export-local-db": "npm run production-db-dump; wp db export dump.sql; npm run copy-db-to-production; npm run import-db-remote; npm run search-replace-production"
   },
   "repository": {

@@ -52,6 +52,9 @@ add_action( 'init', function () {
     remove_menu_page('edit-comments.php');
   });
 
+  register_nav_menus([
+    'main' => 'Main',
+  ]);
 });
 
 function send_to_404() {

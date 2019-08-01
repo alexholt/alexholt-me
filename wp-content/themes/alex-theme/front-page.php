@@ -3,17 +3,21 @@ get_header();
 the_post();
 ?>
 
-<main>
+<main class="post-listing">
 
-  <h1><?php the_title(); ?></h1>
-  <h2>Musings</h2>
-  <?php if ( is_user_logged_in() )   ?>
-  <aside>
+  <aside class="sidebar sidebar--left">
+    Blah
+  </aside>
+
+  <section class="latest-posts">
+
+  </section>
+
     <?php if ( is_active_sidebar( 'rtfm' ) ) : ?>
-      <aside class="sidebar widget-area" role="complementary">
+      <aside class="sidebar sidebar--right">
         <?php dynamic_sidebar( 'rtfm' ); ?>
       </aside>
-    <?php endif; ?>:
+    <?php endif; ?>
   </aside>
 
 </main>

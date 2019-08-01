@@ -4,23 +4,34 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  position: relative;
+}
+
+.site-title {
+  margin-top: 50px;
+}
+
 .shield {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 150px;
   margin: 20px;
 }
 
 .shield--image {
-  width: 40px;
-}
-
-.shield--text {
-  transform: rotateZ(90deg) translateY(20px);
-  transform-origin: 50% 50%;
-  font-size: 12px;
-  font-weight: 800;
+  width: 150px;
 }
 
 .journal-main {
@@ -74,4 +85,50 @@ ul {
 
 .cal__entry--bottom {
   border-bottom: 2px solid black;
+}
+
+.post-listing {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: black;
+  min-height: 50%;
+  width: 100%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.sidebar {
+  background-color: #D8D8D8;
+  height: 100%;
+  width: 200px;
+  padding: 2em;
+}
+
+.latest-posts {
+  background-color: #87FF00;
+  height: 100%;
+  width: calc(100% - 200px * 2);
+}
+
+.menu-item {
+  display: inline;
+}
+
+.main-nav-menu {
+  flex-grow: 2;
+  position: relative;
+  text-align: right;
+}
+
+.menu-main-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 30px;
+}
+
+.main-nav-menu__list .menu-item a {
+  text-decoration: none;
+  color: black;
 }

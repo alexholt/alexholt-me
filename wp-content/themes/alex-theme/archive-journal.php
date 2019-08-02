@@ -41,7 +41,7 @@ $query = new WP_Query([
 $entries = [];
 while ($query->have_posts()) {
   $query->the_post();
-  $entries[get_the_date('d')] = '<h4>' . '<a href="' . get_the_permalink() . '">' .
+  $entries[(int)get_the_date('d')] = '<h4>' . '<a href="' . get_the_permalink() . '">' .
                                 get_the_date('d') . ' ' .
                                 get_the_title() . '</a></h4>' .
                                 '<div>' . get_the_content() . '</div>';

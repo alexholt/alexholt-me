@@ -13,6 +13,7 @@
 /wp-content/index.php
 /wp-content/plugins/*
 /wp-content/themes/*
+/wp-content/uploads/*
 /wp-cron.php
 /wp-includes
 /wp-links-opml.php

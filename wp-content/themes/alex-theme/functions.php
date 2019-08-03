@@ -29,7 +29,7 @@ add_action( 'init', function () {
     'exclude_from_search' => false,
     'has_archive'         => true,
     'query_var'           => true,
-    'can_export'          => true,
+    'can_export'          => false,
     'menu_icon'           => 'dashicons-welcome-write-blog',
     'capability_type'     => 'post',
     'show_in_rest'        => false,

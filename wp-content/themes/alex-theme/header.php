@@ -4,6 +4,8 @@
 <head>
   <meta charset="<?php bloginfo('charset') ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <meta name="theme-color" content="#87FF00"/>
+  <link rel="manifest" href="/manifest.json">
   <?php wp_head() ?>
   <title>alexholt.me</title>
 </head>

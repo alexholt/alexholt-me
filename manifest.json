@@ -3,7 +3,7 @@
   "name": "alexholt.me",
   "icons": [
     {
-      "src":"/wp-content/themes/alexholt-me/assets/pwa192x192.svg",
+      "src":"/wp-content/themes/alexholt-me/assets/pwa192x192.png",
       "sizes": "192x192",
       "type": "image/svg+xml"
     }

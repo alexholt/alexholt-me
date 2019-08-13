@@ -11,13 +11,22 @@ get_header();
 $month_url = get_the_date('Y') . '/' . get_the_date('m');
 ?>
 
-<h1>Single Journal</h1>
+<main class="container">
+  <section class="container container__white container__column">
+    <div class="container--sub container--sub__padded container--sub__stretched container__column">
+      <?php
+      echo '<h3 class="h3">' . get_the_title() . "</h3>";
+      the_content();
+      ?>
+    </div>
 
-<h2><?php the_title() ?></h2>
-<section><?php the_content() ?></section>
+    <div class="container--sub">
+      <span><?php the_author_meta('nickname') ?> — </span>
+      <a href="/journal/<?php echo $month_url; ?>"><?php the_date() ?></a>
+    </div>
 
-<span><?php the_author_meta('nickname') ?> — </span>
-<a href="/journal/<?php echo $month_url; ?>"><?php the_date() ?></a>
+  </section>
+</main>
 
 <?php
 

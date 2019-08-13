@@ -1,25 +1,20 @@
-<?php get_header() ?>
+<?php
+get_header();
+?>
 
-<main id="main" class="site-main archive">
+<main class="container">
 
-  <?php if ( have_posts() ) : ?>
-
-    <header>
-      <?php
-      the_archive_title( '<h1>', '</h1>' );
-      ?>
-    </header>
-
+  <section class="container container__white">
     <?php
-    while (have_posts()) :
-      the_post();
-    endwhile;
+    query_posts('post_type=post');
+    if (have_posts()):
+      get_template_part( 'template-parts/posts' );
+    else:
+      get_template_part( 'template-parts/empty' );
+    endif;
+    ?>
+  </section>
 
-  else :
-    ?><h2>No posts found</h2><?php
-
-  endif;
-  ?>
 </main>
 
 <?php get_footer() ?>

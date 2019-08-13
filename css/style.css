@@ -1,7 +1,13 @@
 @import '~normalize.css';
+@import './typography.css';
 
 * {
   box-sizing: border-box;
+  line-height: 1.5;
+}
+
+html {
+  background-color: black;
 }
 
 body {
@@ -11,26 +17,98 @@ body {
   align-items: center;
 }
 
-header {
-  display: flex;
+main, footer {
+  background-color: white;
   width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container__wrap {
+  flex-wrap: wrap;
+}
+
+.container__full {
+  width: 100%;
+}
+
+.container__black {
+  background-color: black;
+  color: white;
+}
+
+.container__white {
+  background-color: white;
+  color: black;
+}
+
+.container--sub {
+  width: 100%;
+  max-width: 1160px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+
+}
+
+.container--sub__padded-large {
+  margin: 100px 0 100px 0;
+}
+
+.container--sub__stretched {
+  align-items: stretch;
+}
+
+.container__spaced {
+  justify-content: space-around;
+}
+
+.container__column {
+  flex-direction: column;
+}
+
+.container__column--start {
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .site-title {
-  margin-top: 50px;
+  max-width: 300px;
+}
+
+.site-title--main {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.site-title--sub {
+  margin-top: -1.15em;
+  font-size: 30px;
 }
 
 .shield {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 20px;
+  margin: 20px 20px 20px 0;
 }
 
-.shield--image {
+.shield__image {
   width: 150px;
 }
 
@@ -87,28 +165,9 @@ ul {
   border-bottom: 2px solid black;
 }
 
-.post-listing {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: black;
-  min-height: 50%;
-  width: 100%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
-.sidebar {
-  background-color: #D8D8D8;
-  height: 100%;
-  width: 200px;
-  padding: 2em;
-}
-
 .latest-posts {
-  background-color: #87FF00;
   height: 100%;
-  width: calc(100% - 200px * 2);
+  width: 100%;
 }
 
 .menu-item {
@@ -117,18 +176,38 @@ ul {
 
 .main-nav-menu {
   flex-grow: 2;
-  position: relative;
   text-align: right;
 }
 
 .menu-main-container {
+  font-size: 30px;
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 30px;
 }
 
-.main-nav-menu__list .menu-item a {
-  text-decoration: none;
+.menu-item a {
+  font-size: 22px;
+  padding-right: 0.5em;
+}
+
+.site-main {
+  padding: 75px;
+}
+
+.img-container {
+  width: 100%;
+}
+
+.img-container--mask {
+  width: 420px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.listing-container {
+  max-width: 420px;
   color: black;
+  text-decoration: none;
 }

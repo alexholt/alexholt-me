@@ -1,21 +1,21 @@
 <?php get_header() ?>
-<section id="index" class="content-area">
-  <main id="main" class="site-main">
 
-<?php
-if ( have_posts() ) {
+<main class="container">
 
-  while ( have_posts() ) {
-    the_post();
-    echo "<h2>" . the_title() . "</h2>";
-    the_content();
-  }
+  <section class="container container__white container__column">
+    <?php
+    get_template_part( 'template-parts/featured' );
 
-} else {
-  echo "<h2>Nothing here</h2>";
-}
-?>
+    query_posts('post_type=post');
 
-  </main>
-</section>
-<?php get_footer()?>
+    if (have_posts()) {
+      get_template_part( 'template-parts/posts' );
+    } else {
+      get_template_part( 'template-parts/empty' );
+    }
+    ?>
+  </section>
+
+</main>
+
+<?php get_footer() ?>

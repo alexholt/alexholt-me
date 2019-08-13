@@ -28,7 +28,16 @@ while (have_posts()):
     </section>
 
   <?php else: ?>
-    <section><?php the_content() ?></section>
+    <main class="container">
+      <section class="container container__white">
+        <div class="container--sub container--sub__padded container--sub__stretched container__column">
+          <?php
+            echo '<h3 class="h3">' . get_the_title() . "</h3>";
+            the_content();
+          ?>
+        </div>
+      </section>
+    </main>
   <?php endif; ?>
 
   <span><?php the_author_meta('nickname') ?> — </span>

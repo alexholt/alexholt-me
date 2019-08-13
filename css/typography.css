@@ -1,0 +1,51 @@
+* {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.h1 {
+  font-family: 'Audiowide', cursive;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.h3 {
+  font-family: 'Audiowide', cursive;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.h4 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.h5 {
+  font-size: 22px;
+}
+
+.h {
+  width: 100%;
+}
+
+a:hover .h {
+  text-decoration: none;
+}
+
+.h__left {
+  text-align: left;
+}
+
+.h__shift-up {
+  margin-top: -1em;
+}
+
+.fine-print {
+  font-size: 16px;
+}

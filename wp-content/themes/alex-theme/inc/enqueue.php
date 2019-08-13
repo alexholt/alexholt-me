@@ -3,7 +3,7 @@
 add_action('wp_enqueue_scripts', function () {
   $bundle = '/bundle.js';
   $style = '/style.css';
-  
+
   wp_enqueue_script(
     'alex-theme-bundle',
     get_theme_file_uri($bundle),

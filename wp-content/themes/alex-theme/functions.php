@@ -1,8 +1,9 @@
 <?php
 
-include('inc/enqueue.php');
+require_once('inc/enqueue.php');
 
-add_action( 'init', function () {
+function setup_journal() {
+
   register_post_type( 'journal', [
 
     'labels'              => [
@@ -24,19 +25,40 @@ add_action( 'init', function () {
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'publicly_queryable'  => true,
-    'exclude_from_search' => false,
+    'show_in_nav_menus'   => false,
+    'publicly_queryable'  => false,
+    'exclude_from_search' => true,
     'has_archive'         => true,
     'query_var'           => true,
-    'can_export'          => is_user_logged_in(),
+    'can_export'          => true, //is_user_logged_in(),
     'menu_icon'           => 'dashicons-welcome-write-blog',
     'capability_type'     => 'post',
-    'show_in_rest'        => is_user_logged_in(),
+    'show_in_rest'        => true, //is_user_logged_in(),
     'with_front'          => false,
     'has_feed'            => false,
     'rewrite'             => [ 'feeds' => false ],
   ]);
+}
+
+function send_to_404() {
+  nocache_headers();
+  status_header(404);
+  include(get_query_template('404'));
+  die;
+}
+
+function get_thumbnail() {
+  if ( has_post_thumbnail() ) {
+    the_post_thumbnail( 'medium-large' );
+  } else {
+    ?><img src="<?= get_template_directory_uri() . '/assets/image-placeholder.svg' ?>"><?php
+  }
+}
+
+add_action( 'init', function () {
+  setup_journal();
+
+  add_theme_support( 'post-thumbnails' );
 
   register_sidebar(
     array(
@@ -66,46 +88,4 @@ add_action( 'init', function () {
 
   $role = get_role('administrator');
   $role->add_cap('unfiltered_upload');
-
-  add_feed('trivia', function () {
-    header('content-type: text/xml; charset=UTF-8'); // The rss content type confuses the browser when displaying it
-    $data = get_trivia_data();
-    $i = rand(0, count($data));
-
-    $rss = str_replace(
-      '$question',
-      substr($data[$i]->question, 1, -1) . ' <br/> <a href="/trivia-answer?q=' . $i . '">Answer</a>',
-      file_get_contents(get_theme_file_path('template-parts/trivia-rss.php'))
-    );
-
-
-    echo $rss;
-  });
-
-  add_action( 'rest_api_init', function () {
-    register_rest_route( 'trivia/v1', '/answer/(?P<id>\d+)', [
-      'methods' => 'GET',
-      'callback' => function ($data) {
-        return  get_trivia_data()[$data['id']];
-      },
-    ]);
-  });
-
-  add_filter('feed_content_type', function ($content_type, $type) {
-    if ('trivia' == $type) {
-      return feed_content_type('rss2');
-    }
-    return $content_type;
-  }, 10, 2);
 });
-
-function send_to_404() {
-  nocache_headers();
-  status_header(404);
-  include(get_query_template('404'));
-  die;
-}
-
-function get_trivia_data() {
-  return json_decode(file_get_contents(wp_get_upload_dir()['basedir'] . '/2019/08/data.json'));
-}

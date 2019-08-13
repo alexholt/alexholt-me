@@ -1,44 +1,37 @@
-<svg viewBox="0 0 407 626" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="153px" height="236px" viewBox="0 0 153 236" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
     <title>Shield</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M0,59.1860205 L203.273839,0 L406.547678,59.1860205 L406.547678,482.899384 C347.885396,578.291314 280.12745,625.987278 203.273839,625.987278 C126.420228,625.987278 58.662282,578.291314 0,482.899384 L0,59.1860205 Z" id="path-1"></path>
-        <path d="M0,56.0659907 L186.292732,0 L372.585464,56.0659907 L372.585464,457.443027 C318.823717,547.806308 256.72614,592.987949 186.292732,592.987949 C115.859325,592.987949 53.7617474,547.806308 0,457.443027 L0,56.0659907 Z" id="path-3"></path>
+        <path d="M0,22.2892035 L76.2276897,-3.55271368e-15 L152.455379,22.2892035 L152.455379,181.857853 C130.457024,217.782048 105.047794,235.744145 76.2276897,235.744145 C47.4075856,235.744145 21.9983557,217.782048 0,181.857853 L0,22.2892035 Z" id="path-1"></path>
+        <path d="M0,22.2892035 L76.2276897,-3.55271368e-15 L152.455379,22.2892035 L152.455379,181.857853 C130.457024,217.782048 105.047794,235.744145 76.2276897,235.744145 C47.4075856,235.744145 21.9983557,217.782048 0,181.857853 L0,22.2892035 Z" id="path-3"></path>
+        <linearGradient x1="0%" y1="45.3072213%" x2="98.929215%" y2="45.3072213%" id="linearGradient-5">
+            <stop stop-color="#BCFF00" offset="0%"></stop>
+            <stop stop-color="#E3FF53" offset="50.2264803%"></stop>
+            <stop stop-color="#525252" offset="100%"></stop>
+        </linearGradient>
+        <path d="M6.375,27.8929369 L76.2347746,6.7787234 L146.094549,27.8929369 L146.094549,179.049821 C125.933894,213.080248 102.647302,230.095462 76.2347746,230.095462 C49.8222468,230.095462 26.5356553,213.080248 6.375,179.049821 L6.375,27.8929369 Z" id="path-6"></path>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Shield" transform="translate(-157.000000, -50.000000)">
-            <g transform="translate(157.000000, 49.973190)" id="Sheild">
+        <g id="Desktop-HD" transform="translate(-140.000000, -38.000000)">
+            <g id="Shield" transform="translate(140.000000, 38.000000)">
                 <g>
-                    <g id="Group-2">
-                        <g id="Group">
-                            <g id="Rectangle-2" transform="translate(0.000000, 0.026810)">
-                                <g id="Rectangle">
-                                    <g>
-                                        <mask id="mask-2" fill="white">
-                                            <use xlink:href="#path-1"></use>
-                                        </mask>
-                                        <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
-                                        <rect fill="#000000" mask="url(#mask-2)" x="202.832713" y="0.0608016061" width="254.51831" height="647.068064" rx="2"></rect>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                        <g id="Group-Copy" transform="translate(17.000000, 18.026810)">
-                            <g id="Rectangle-2">
-                                <g id="Rectangle">
-                                    <g>
-                                        <mask id="mask-4" fill="white">
-                                            <use xlink:href="#path-3"></use>
-                                        </mask>
-                                        <use id="Mask" fill="#87FF00" xlink:href="#path-3"></use>
-                                        <rect fill="#D8D8D8" mask="url(#mask-4)" x="185.888457" y="0.0575964096" width="233.256338" height="612.957447" rx="2"></rect>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
+                    <g id="Main" transform="translate(0.000000, 0.010096)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Black-Outline" fill="#000000" xlink:href="#path-1"></use>
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="White-Outline" fill="#000000" xlink:href="#path-3"></use>
+                        <mask id="mask-7" fill="white">
+                            <use xlink:href="#path-6"></use>
+                        </mask>
+                        <use id="Left-Side" stroke="#FFFFFF" stroke-width="4.125" fill="url(#linearGradient-5)" xlink:href="#path-6"></use>
                     </g>
-                    <polygon id="Triangle" stroke="#FFFFFF" stroke-width="9" fill="#000000" transform="translate(203.000000, 313.026810) rotate(-180.000000) translate(-203.000000, -313.026810) " points="203 215.02681 281 411.02681 125 411.02681"></polygon>
+                    <polygon id="Polygon" stroke="#FFFFFF" stroke-width="3.75" fill="#000000" transform="translate(75.937500, 113.543617) rotate(-180.000000) translate(-75.937500, -113.543617) " points="75.9375 76.8255319 110.710504 102.197105 97.4283983 143.249172 54.4466017 143.249172 41.1644961 102.197105"></polygon>
                 </g>
             </g>
         </g>

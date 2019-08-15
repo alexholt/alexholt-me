@@ -6,11 +6,10 @@ while (have_posts()):
   the_post();
   ?>
 
-  <h1><?php the_title() ?></h1>
-
   <?php if (is_singular('attachment') && get_post_mime_type(get_the_id()) == 'text/plain'): ?>
 
     <section>
+      <h1><?php the_title() ?></h1>
       <pre>
         <?php
           $filename = get_attached_file(get_the_id());
@@ -32,7 +31,7 @@ while (have_posts()):
       <section class="container container__white">
         <div class="container--sub container--sub__padded container--sub__stretched container__column">
           <?php
-            echo '<h3 class="h3">' . get_the_title() . "</h3>";
+            echo '<h1 class="h1">' . get_the_title() . "</h1>";
             the_content();
           ?>
         </div>

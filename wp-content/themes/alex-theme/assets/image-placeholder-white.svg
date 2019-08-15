@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420px" height="250px" viewBox="0 0 420 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Image Placeholder White</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,18.8791134 L64.8401401,-3.55271368e-15 L129.68028,18.8791134 L129.68028,154.034891 C110.968228,184.462939 89.3548485,199.676963 64.8401401,199.676963 C40.3254317,199.676963 18.7120517,184.462939 0,154.034891 L0,18.8791134 Z" id="path-1"></path>
+        <path d="M0,18.8791134 L64.8401401,-3.55271368e-15 L129.68028,18.8791134 L129.68028,154.034891 C110.968228,184.462939 89.3548485,199.676963 64.8401401,199.676963 C40.3254317,199.676963 18.7120517,184.462939 0,154.034891 L0,18.8791134 Z" id="path-3"></path>
+        <linearGradient x1="0%" y1="45.3072213%" x2="98.929215%" y2="45.3072213%" id="linearGradient-5">
+            <stop stop-color="#BCFF00" offset="0%"></stop>
+            <stop stop-color="#E3FF53" offset="50.2264803%"></stop>
+            <stop stop-color="#525252" offset="100%"></stop>
+        </linearGradient>
+        <path d="M5.42264753,23.6255154 L64.8461666,5.74162679 L124.269686,23.6255154 L124.269686,151.656468 C107.120803,180.480481 87.3129632,194.892488 64.8461666,194.892488 C42.3793699,194.892488 22.5715303,180.480481 5.42264753,151.656468 L5.42264753,23.6255154 Z" id="path-6"></path>
+    </defs>
+    <g id="Image-Placeholder-White" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="420" height="250"></rect>
+        <g id="Shield" transform="translate(145.000000, 25.000000)">
+            <g>
+                <g id="Main" transform="translate(0.000000, 0.008552)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Black-Outline" fill="#000000" xlink:href="#path-1"></use>
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="White-Outline" fill="#000000" xlink:href="#path-3"></use>
+                    <mask id="mask-7" fill="white">
+                        <use xlink:href="#path-6"></use>
+                    </mask>
+                    <use id="Left-Side" stroke="#FFFFFF" stroke-width="3.50877193" fill="url(#linearGradient-5)" xlink:href="#path-6"></use>
+                </g>
+                <polygon id="Polygon" stroke="#FFFFFF" stroke-width="3.18979266" fill="#000000" transform="translate(64.593301, 96.172249) rotate(-180.000000) translate(-64.593301, -96.172249) " points="64.5933014 65.0717703 94.1716141 86.5616724 82.873704 121.333064 46.3128989 121.333064 35.0149887 86.5616724"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

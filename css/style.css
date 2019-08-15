@@ -23,7 +23,7 @@ main, footer {
   width: 100%;
 }
 
-a:hover {
+.menu-item a:hover {
   text-decoration: underline;
 }
 
@@ -177,8 +177,26 @@ ul {
   border-radius: 8px;
 }
 
+.img--featured {
+  width: 520px;
+  height: 310px;
+  margin-right: 30px;
+}
+
+.img--featured > img {
+  width: 520px
+}
+
 .listing-container {
   max-width: 420px;
   color: black;
   text-decoration: none;
+}
+
+.listing-container:hover .h3 {
+  text-decoration: underline;
+}
+
+.listing-container--featured {
+  margin-top: -30px;
 }

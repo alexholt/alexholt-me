@@ -47,12 +47,34 @@ function send_to_404() {
   die;
 }
 
-function get_thumbnail() {
+function get_thumbnail_white() {
+  get_thumbnail('-white');
+}
+
+function get_thumbnail($alt = '') {
   if ( has_post_thumbnail() ) {
     the_post_thumbnail( 'medium-large' );
   } else {
-    ?><img src="<?= get_template_directory_uri() . '/assets/image-placeholder.svg' ?>"><?php
+    ?><img src="<?= get_template_directory_uri() . "/assets/image-placeholder$alt.svg" ?>"><?php
   }
+}
+
+function posts_navigation() {
+  the_posts_pagination(
+    array(
+      'mid_size'  => 2,
+      'prev_text' => sprintf(
+        '%s <span class="nav-prev-text">%s</span>',
+        twentynineteen_get_icon_svg( 'chevron_left', 22 ),
+        __( 'Newer posts', 'twentynineteen' )
+      ),
+      'next_text' => sprintf(
+        '<span class="nav-next-text">%s</span> %s',
+        __( 'Older posts', 'twentynineteen' ),
+        twentynineteen_get_icon_svg( 'chevron_right', 22 )
+      ),
+    )
+  );
 }
 
 add_action( 'init', function () {

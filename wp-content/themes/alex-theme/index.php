@@ -1,11 +1,13 @@
 <?php get_header() ?>
 
-<main class="container">
+<main class="container container__column">
 
   <section class="container container__white container__column">
-    <?php
-    get_template_part( 'template-parts/featured' );
+    <?php get_template_part( 'template-parts/featured' ); ?>
+  </section>
 
+  <section class="container container__black container__column container__full">
+    <?php
     query_posts('post_type=post');
 
     if (have_posts()) {

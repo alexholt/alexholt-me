@@ -21,7 +21,7 @@ function setup_journal() {
     ],
 
     'hierarchical'        => true,
-    'supports'            => ['title', 'editor', 'thumbnail'],
+    'supports'            => ['title', 'editor', 'thumbnail', 'custom-fields'],
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,

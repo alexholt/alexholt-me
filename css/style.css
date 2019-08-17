@@ -57,6 +57,10 @@ a {
   color: black;
 }
 
+.container__narrow {
+  width: 800px;
+}
+
 .container--sub {
   width: 100%;
   max-width: 1160px;

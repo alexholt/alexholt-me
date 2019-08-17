@@ -28,7 +28,7 @@ while (have_posts()):
 
   <?php else: ?>
     <main class="container">
-      <section class="container container__white">
+      <section class="container container__white container__narrow">
         <div class="container--sub container--sub__padded container--sub__stretched container__column">
           <?php
             echo '<h1 class="h1">' . get_the_title() . "</h1>";

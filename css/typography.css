@@ -4,6 +4,11 @@
   font-size: 18px;
 }
 
+figcaption {
+  text-align: center;
+  font-size: 16px;
+}
+
 .h1 {
   font-family: 'Audiowide', cursive;
   font-size: 48px;

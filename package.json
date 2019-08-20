@@ -16,6 +16,7 @@
     "production-db-dump": "npm run ssh \"wp --path=public_html db export dump.sql\"",
     "copy-db": "scp alexhol3@alexholt.me:dump.sql .",
     "copy-db-to-production": "scp dump.sql alexhol3@alexholt.me:~",
+    "copy-uploads": "rsync -rv --delete alexhol3@alexholt.me:~/public_html/wp-content/uploads wp-content/",
     "import-db": "wp db import dump.sql",
     "import-db-remote": "npm run ssh \"wp --path=public_html db import dump.sql\"",
     "import-production-db": "npm run production-db-dump; npm run copy-db; npm run import-db; npm run search-replace",

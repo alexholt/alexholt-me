@@ -80,7 +80,7 @@ $last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->fo
       while ((int)$date_obj->format('m') != $next_month_num) {
         if ((int)$date_obj->format('m') != $month) {
           echo '<div class="cal__entry cal__entry--empty"></div>';
-        } elseif (count($entries)) {
+        } elseif (isset($entries[(int)$date_obj->format('d')])) {
           echo '<div class="cal__entry">' . array_pop($entries) . '</div>';
 
         } else {

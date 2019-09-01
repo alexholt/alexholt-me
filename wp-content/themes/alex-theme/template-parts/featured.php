@@ -1,7 +1,9 @@
 <?php
 
-$sticky = get_option( 'sticky_posts' );
-$posts = new WP_Query( 'p=' . $sticky[0] );
+$sticky = get_option( 'sticky_posts' )[0] ?? false;
+if (!$sticky) return;
+  
+$posts = new WP_Query('p=' . $sticky);
 
 
 if ($posts->have_posts()):
@@ -15,10 +17,10 @@ if ($posts->have_posts()):
         </div>
       </div>
 
-      <div class="listing-container listing-container--featured">
-        <h3 class="h3 h__left h"><?= get_the_title() ?></h3>
-        <h4 class="h4 h__left h h__shift-up"><?= get_the_date() ?></h4>
-        <h5 class="h5 h__left h h__shift-up"><?= get_the_excerpt() ?></h5>
+      <div class="listing-container">
+        <h3><?= get_the_title() ?></h3>
+        <h4><?= get_the_date() ?></h4>
+        <h5><?= get_the_excerpt() ?></h5>
       </div>
     </a>
   </div>

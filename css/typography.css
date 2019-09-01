@@ -1,7 +1,12 @@
-* {
+
+html {
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
   font-size: 20px;
+}
+
+body {
+  line-height: 1.4;
 }
 
 figcaption {
@@ -9,30 +14,55 @@ figcaption {
   font-size: 16px;
 }
 
-.h1 {
-  font-family: 'Audiowide', cursive;
-  font-size: 48px;
-  font-weight: 400;
+h2, h3, h4, h5, p {
+  margin: 0.6em 10px;
 }
 
-.h2 {
+h1, h3, h5 {
+  font-family: 'Audiowide', serif;
+}
+
+h2, h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 10px 10px
+}
+
+h2 {
   font-size: 30px;
   font-weight: 400;
 }
 
-.h3 {
+h3 {
   font-family: 'Audiowide', cursive;
   font-size: 28px;
   font-weight: 400;
 }
 
-.h4 {
+h4 {
   font-size: 24px;
   font-weight: 400;
 }
 
-.h5 {
+h5 {
   font-size: 22px;
+}
+
+ol, ul, li {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+ul > li > ul > li {
+  list-style-type: circle;
+}
+
+ul > li > ul > li > ul > li {
+  list-style-type: square;
 }
 
 .h {
@@ -47,8 +77,12 @@ a:hover .h {
   text-align: left;
 }
 
-.h__shift-up {
-  margin-top: -1em;
+.h__center {
+  text-align: center;
+}
+
+.h__right {
+  text-align: right;
 }
 
 .fine-print {

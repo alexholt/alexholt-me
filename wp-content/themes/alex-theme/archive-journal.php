@@ -50,6 +50,12 @@ while ($query->have_posts()) {
 $date_obj = DateTime::createFromFormat('!Y-m-d', $year . '-' . $month . '-1');
 $month_name = $date_obj->format('F');
 $starting_day = $date_obj->format('w');
+
+$next_month = (new DateTime($date_obj->format('Y-m-d')))->add(new DateInterval('P1M'));
+$last_month = (new DateTime($date_obj->format('Y-m-d')))->sub(new DateInterval('P1M'));
+  
+$next_month_url = "/journal/" . $next_month->format('Y') . "/" . $next_month->format('m') . "/";
+$last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->format('m') . "/";
 ?>
 
 <main class="container">
@@ -57,7 +63,7 @@ $starting_day = $date_obj->format('w');
   <section class="container--sub container__white container__column">
     <h1>Journal</h1>
 
-    <h2><?php echo $month_name . ' ' . $year ?></h2>
+    <h2><a href="<?= $last_month_url ?>"><?php left_arrow() ?></a> <?php echo $month_name . ' ' . $year ?> <a href="<?= $next_month_url ?>"><?php right_arrow() ?></a></h2>
 
     <section class="cal">
       <?php

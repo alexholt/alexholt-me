@@ -77,6 +77,32 @@ function posts_navigation() {
   );
 }
 
+function right_arrow() {
+  echo <<<EOD
+  <svg
+    class="link-arrow"
+    viewBox="0 0 10 10"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <polygon points="0 0 10 5 0 10"></polygon>
+  </svg>
+EOD;
+}
+
+function left_arrow() {
+  echo <<<EOD
+  <svg
+    class="link-arrow"
+    viewBox="0 0 10 10"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <polygon points="10 0 0 5 10 10"></polygon>
+  </svg>
+EOD;
+}
+
 add_action( 'init', function () {
   setup_journal();
 

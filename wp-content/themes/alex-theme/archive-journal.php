@@ -49,11 +49,11 @@ while ($query->have_posts()) {
 
 $date_obj = DateTime::createFromFormat('!Y-m-d', $year . '-' . $month . '-1');
 $month_name = $date_obj->format('F');
-$starting_day = $date_obj->format('w');
+$next_month_num = (int)(new DateTime($date_obj->format('Y-m-d')))->add(new DateInterval('P1M'))->format('m');
 
 $next_month = (new DateTime($date_obj->format('Y-m-d')))->add(new DateInterval('P1M'));
 $last_month = (new DateTime($date_obj->format('Y-m-d')))->sub(new DateInterval('P1M'));
-  
+
 $next_month_url = "/journal/" . $next_month->format('Y') . "/" . $next_month->format('m') . "/";
 $last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->format('m') . "/";
 ?>
@@ -67,31 +67,30 @@ $last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->fo
 
     <section class="cal">
       <?php
+      // Add the days of the week column headers
       for ($i = 0; $i < 7; $i++) {
         echo '<div class="cal__entry"><p class="cal__day">' . jddayofweek($i, 2) . '</p></div>';
       }
 
-      for ($i = 1; $i <= $days_in_month + (int)$starting_day - 1; $i++) {
-        $offset = ($i - (int)$starting_day + 1);
+      $one_day = new DateInterval('P1D');
+      while ((int)$date_obj->format('w') > 0) {
+        $date_obj->sub($one_day);
+      }
 
-        if ($i < (int)$starting_day) {
+      while ((int)$date_obj->format('m') != $next_month_num) {
+        if ((int)$date_obj->format('m') != $month) {
           echo '<div class="cal__entry cal__entry--empty"></div>';
-
-        } elseif (isset($entries[$offset])) {
-          echo '<div class="cal__entry">' . $entries[$offset] . '</div>';
+        } elseif (count($entries)) {
+          echo '<div class="cal__entry">' . array_pop($entries) . '</div>';
 
         } else {
           echo '<div class="cal__entry"><h4><a href="/wp-admin/post-new.php?post_type=journal">' .
-               (string)$offset .
+               $date_obj->format('d') .
                '</a></h4></div>';
         }
+        $date_obj->add($one_day);
       }
 
-      $max_days = 42;
-
-      for ($i = $days_in_month + (int)$starting_day + 1; $i <= $max_days + 1; $i++) {
-        echo '<div class="cal__entry cal__entry--empty"></div>';
-      }
       ?>
     </section>
   </section>

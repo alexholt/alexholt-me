@@ -73,7 +73,7 @@ $last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->fo
       }
 
       $one_day = new DateInterval('P1D');
-      while ((int)$date_obj->format('w') > 0) {
+      while ((int)$date_obj->format('w') != 1) {
         $date_obj->sub($one_day);
       }
 
@@ -81,7 +81,7 @@ $last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->fo
         if ((int)$date_obj->format('m') != $month) {
           echo '<div class="cal__entry cal__entry--empty"></div>';
         } elseif (isset($entries[(int)$date_obj->format('d')])) {
-          echo '<div class="cal__entry">' . array_pop($entries) . '</div>';
+          echo '<div class="cal__entry">' . $entries[(int)$date_obj->format('d')] . '</div>';
 
         } else {
           echo '<div class="cal__entry"><h4><a href="/wp-admin/post-new.php?post_type=journal">' .

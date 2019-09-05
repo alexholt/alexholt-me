@@ -34,7 +34,7 @@ function setup_journal() {
     'menu_icon'           => 'dashicons-welcome-write-blog',
     'capability_type'     => 'post',
     'show_in_rest'        => is_user_logged_in(),
-    'with_front'          => false,
+    'with_front'          => true,
     'has_feed'            => false,
     'rewrite'             => [ 'feeds' => false ],
   ]);
@@ -57,24 +57,6 @@ function get_thumbnail($alt = '') {
   } else {
     ?><img src="<?= get_template_directory_uri() . "/assets/image-placeholder$alt.svg" ?>"><?php
   }
-}
-
-function posts_navigation() {
-  the_posts_pagination(
-    array(
-      'mid_size'  => 2,
-      'prev_text' => sprintf(
-        '%s <span class="nav-prev-text">%s</span>',
-        twentynineteen_get_icon_svg( 'chevron_left', 22 ),
-        __( 'Newer posts', 'twentynineteen' )
-      ),
-      'next_text' => sprintf(
-        '<span class="nav-next-text">%s</span> %s',
-        __( 'Older posts', 'twentynineteen' ),
-        twentynineteen_get_icon_svg( 'chevron_right', 22 )
-      ),
-    )
-  );
 }
 
 function right_arrow() {
@@ -136,4 +118,12 @@ add_action( 'init', function () {
 
   $role = get_role('administrator');
   $role->add_cap('unfiltered_upload');
+
+  add_action('template_include', function ($template) {
+    global $wp_query;
+    if ($wp_query->query_vars['post_type'] != 'journal') return $template;
+    if (!$wp_query->query_vars['day']) return locate_template('archive-journal.php');
+    return locate_template('single-journal.php');
+  });
 });
+

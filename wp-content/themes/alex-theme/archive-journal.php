@@ -10,11 +10,6 @@ get_header();
 <?php
 global $wp_query;
 
-if ($wp_query->query_vars['day']) {
-  include(get_query_template('single-journal'));
-  die;
-}
-
 $year = $wp_query->query_vars['year'] ?: date('Y');
 $month = $wp_query->query_vars['monthnum'] ?: date('m');
 $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
@@ -59,7 +54,6 @@ $last_month_url = "/journal/" . $last_month->format('Y') . "/" . $last_month->fo
 ?>
 
 <main class="container">
-
   <section class="container--sub container__white container__column">
     <h1>Journal</h1>
 

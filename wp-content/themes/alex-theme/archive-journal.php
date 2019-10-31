@@ -17,6 +17,8 @@ $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 $query = new WP_Query([
   'post_type' => 'journal',
   'author' => get_current_user_id(),
+  'posts_per_page' => -1,
+  'orderby' => ['date' => 'asc'],
   'date_query' => [[
     'after'     => [
       'year'  => $year,

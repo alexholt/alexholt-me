@@ -18,11 +18,11 @@ h2, h3, h4, h5, p {
   margin: 0.6em 10px;
 }
 
-h1, h3, h5 {
+h1, h3 {
   font-family: 'Audiowide', serif;
 }
 
-h2, h4 {
+h2, h4, h5 {
   font-family: 'Oswald', sans-serif;
 }
 

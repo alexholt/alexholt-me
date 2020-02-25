@@ -67,7 +67,7 @@ a {
 }
 
 .container__narrow {
-  width: 800px;
+  max-width: 800px;
 }
 
 .container--sub {
